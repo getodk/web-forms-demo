@@ -1,8 +1,7 @@
 import type { Component } from 'vue';
 import { createApp } from 'vue';
 
-// import { webFormsPlugin } from './web-forms-plugin.ts'; // TODO remove
-import { webFormsPlugin } from '@getodk/web-forms';
+import { webFormsPlugin } from './web-forms-plugin.ts';
 import OdkWebFormDemo from './OdkWebFormDemo.vue';
 
 import hankenGrotesk300 from '@fontsource/hanken-grotesk/300.css?inline';

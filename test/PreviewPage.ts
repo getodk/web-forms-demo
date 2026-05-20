@@ -1,7 +1,6 @@
 import { expect, Page } from '@playwright/test';
 
-const DEV_BASE_URL = 'http://localhost:5173';
-const BUILD_BASE_URL = 'http://localhost:5174';
+const BASE_URL = 'http://localhost:5173';
 
 export class PreviewPage {
 	private readonly page: Page;
@@ -10,14 +9,10 @@ export class PreviewPage {
 		this.page = page;
 	}
 
-	async goToDevPage() {
-		await this.page.goto(DEV_BASE_URL);
+	async goToPage() {
+		await this.page.goto(BASE_URL);
 	}
-
-	async goToBuildPage() {
-		await this.page.goto(BUILD_BASE_URL);
-	}
-
+s
 	/**
 	 * Opens a preexisting demo form for dev by navigating through the preview page.
 	 *

@@ -20,6 +20,7 @@ const copyConfigFile = viteStaticCopy({
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue(), copyConfigFile],
+	base: './',
   define: {
     __WEB_FORMS_VERSION__: JSON.stringify(webFormsPackage.version)
   },

@@ -54,8 +54,6 @@
 	--odk-max-form-width: 900px;
 
 	--odk-max-image-height: 300px;
-	--odk-media-container-size: 300px;
-	--odk-audio-height: 60px;
 
 	--odk-spacing-s: 5px;
 	--odk-spacing-m: 10px;
@@ -117,12 +115,6 @@
 		.mobile-only {
 			display: #{$display} !important;
 		}
-	}
-}
-
-@mixin sm-constrained {
-	@media (width <= #{pf.$sm}) and (orientation: portrait), (height <= #{pf.$sm}) and (orientation: landscape) {
-		@content;
 	}
 }
 

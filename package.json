@@ -1,0 +1,49 @@
+{
+  "name": "web-forms-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Demo app for @getodk/web-forms",
+  "homepage": "https://github.com/getodk/web-forms-demo#readme",
+  "bugs": {
+    "url": "https://github.com/getodk/web-forms-demo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getodk/web-forms-demo.git"
+  },
+  "license": "Apache-2.0",
+  "author": "",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview --port 5173",
+    "test": "playwright test"
+  },
+  "dependencies": {
+    "@fontsource/hanken-grotesk": "^5.2.8",
+    "@fontsource/roboto": "^5.2.9",
+    "@getodk/web-forms": "^0.24.0",
+    "@getodk/xforms-engine": "^0.22.0",
+    "@mdi/js": "^7.4.47",
+    "@primeuix/themes": "^1.0.3",
+    "primeflex": "^4.0.0",
+    "primevue": "^4.3.3",
+    "sass": "^1.70.0",
+    "vue": "^3.5.34",
+    "vue-router": "^4.6.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^24.12.3",
+    "@vitejs/plugin-vue": "^6.0.6",
+    "@vue/tsconfig": "^0.9.1",
+    "typescript": "~6.0.2",
+    "vite": "^8.0.13",
+    "vue-tsc": "^3.2.8"
+  },
+  "engines": {
+    "node": "24",
+    "npm": "11"
+  }
+}

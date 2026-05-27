@@ -24,7 +24,7 @@ const validateJRResourceURL: ValidateJRResourceURL = (url) => {
 		const { protocol, href } = url;
 
 		if (protocol !== JR_RESOURCE_URL_PROTOCOL || !href.startsWith(JR_RESOURCE_URL_PROTOCOL)) {
-			throw new Error(`Invalid JRResoruceURL: ${url}`);
+			throw new Error(`Invalid JRResourceURL: ${url}`);
 		}
 	}
 };

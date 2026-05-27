@@ -12,7 +12,7 @@ export class PreviewPage {
 	async goToPage() {
 		await this.page.goto(BASE_URL);
 	}
-s
+
 	/**
 	 * Opens a preexisting demo form for dev by navigating through the preview page.
 	 *

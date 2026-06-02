@@ -2,9 +2,6 @@ name: Build demo from central master
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - add-action-to-build-from-central-front-end
 
 jobs:
   build:

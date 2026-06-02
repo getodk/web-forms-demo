@@ -1,0 +1,52 @@
+name: Build demo from central master
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout web-forms-demo
+        uses: actions/checkout@v6
+        with:
+          path: web-forms-demo
+
+      - name: Checkout central-frontend
+        uses: actions/checkout@v6
+        with:
+          repository: getodk/central-frontend
+          ref: master
+          path: central-frontend
+
+      - uses: volta-cli/action@v5
+        with:
+          node-version: '24'
+          npm-version: '11'
+
+      - name: Install central dependencies
+        working-directory: central-frontend
+        run: npm ci
+
+      - name: Build packages
+        working-directory: central-frontend
+        run: npx turbo run build --filter=@getodk/web-forms --filter=@getodk/xforms-engine
+
+      - name: Pack packages
+        run: |
+          mkdir packed
+          (cd central-frontend/packages/web-forms && npm pack --pack-destination ../../../packed)
+          (cd central-frontend/packages/xforms-engine && npm pack --pack-destination ../../../packed)
+
+      - name: Install packed packages in demo
+        working-directory: web-forms-demo
+        run: npm install --no-save ../packed/*.tgz
+
+      - name: Build demo
+        working-directory: web-forms-demo
+        run: npm run build
+
+      - uses: actions/upload-artifact@v6
+        with:
+          name: dist-website
+          path: web-forms-demo/dist

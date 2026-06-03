@@ -19,7 +19,9 @@ jobs:
         with:
           path: ~/.cache/ms-playwright
           key: playwright-${{ hashFiles('package-lock.json') }}
-      - run: npx playwright install --with-deps --only-shell
+      - run: df -h
+      - run: npx playwright install chromium --with-deps
+        timeout-minutes: 5
       - run: npm run dev < /dev/null & sleep 5
       - run: npm run test
       - uses: actions/upload-artifact@v7

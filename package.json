@@ -23,8 +23,8 @@
   "dependencies": {
     "@fontsource/hanken-grotesk": "^5.2.8",
     "@fontsource/roboto": "^5.2.9",
-    "@getodk/web-forms": "^0.24.0",
-    "@getodk/xforms-engine": "^0.22.0",
+    "@getodk/web-forms": "^1.1.1",
+    "@getodk/xforms-engine": "^1.1.1",
     "@mdi/js": "^7.4.47",
     "@primeuix/themes": "^1.0.3",
     "primeflex": "^4.0.0",

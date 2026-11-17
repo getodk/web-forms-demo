@@ -30,7 +30,7 @@ jobs:
 
       - name: Build packages
         working-directory: central-frontend
-        run: npx turbo run build --filter=@getodk/web-forms --filter=@getodk/xforms-engine
+        run: npm run build:packages
 
       - name: Pack packages
         run: |
